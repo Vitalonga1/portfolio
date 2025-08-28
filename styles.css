@@ -1,0 +1,365 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+      }
+      body {
+        line-height: 1.6;
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .logo-icon {
+        width: 10%;
+        max-width: 250px;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+      nav a {
+        text-decoration: none;
+        color: #34495e;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        position: relative;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: #8e44ad;
+      }
+      nav a.active {
+        color: #8e44ad;
+      }
+      nav a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #8e44ad;
+        border-radius: 2px;
+      }
+      .menu-toggle {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #fff;
+      }
+
+      section {
+        padding: 6rem 10%;
+        min-height: 80vh;
+      }
+
+      #home,
+      #contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      #home .intro,
+      #contact .details {
+        flex: 1;
+      }
+      #home h1,
+      #contact h2 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+      #home p,
+      #contact p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: #555;
+      }
+      #home img,
+      #contact img {
+        width: 320px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .btn-main {
+        background: #8e44ad;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      #home {
+        background: #ecf0f1;
+      }
+      #about {
+        background: #f9f9f9;
+      }
+      #projects {
+        background: #f4f6fb;
+      }
+      #contact {
+        background: #ecf0f1;
+      }
+      #about {
+        padding: 4rem 10%;
+        min-height: auto;
+      }
+      #about .about-content {
+        display: flex;
+        align-items: center;
+        gap: 2rem; 
+        }
+      #about img {
+        width: 450px;
+        border-radius: 12px;
+        }
+      #about h2,
+      #projects h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+      #about p {
+        flex: 1; /* let text take remaining space */
+        color: #555;
+        line-height: 1.6;
+      }
+
+      #projects .project-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 per row */
+        gap: 2rem;
+        max-width: 1000px;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      .project {
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        overflow: hidden; /* round image corners with card */
+      }
+
+      .project:hover {
+        transform: translateY(-5px);
+      }
+
+      .project img {
+        width: 100%;
+        height: 380px; /* consistent image height */
+        object-fit: cover; /* crop neatly */
+        border-bottom: 1px solid #ddd;
+      }
+
+      .project-content {
+        padding: 1rem;
+      }
+
+      .project-content a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #8e44ad;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-content p {
+        color: #555;
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-content .btn {
+        display: inline-block;
+        padding: 0.4rem 0.8rem;
+        background: #27ae60;
+        color: #fff;
+        font-size: 0.85rem;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      .project-content .btn:hover {
+        background: #219150;
+      }
+
+      @media (max-width: 768px) {
+        #projects .project-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .contact-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: auto;
+      }
+
+      .details {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .details h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .details p {
+        display: flex;
+        align-items: center;
+        margin: 12px 0;
+        font-size: 1rem;
+      }
+
+      .details a {
+        margin-left: 10px;
+        text-decoration: none;
+        color: #333;
+        word-break: break-word;
+      }
+
+      .contact-icon {
+        font-size: 18px;
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Brand colors */
+      .contact-icon.email {
+        background: #d93025;
+      } /* Gmail red */
+      .contact-icon.github {
+        background: #333;
+      } /* GitHub black */
+      .contact-icon.linkedin {
+        background: #0077b5;
+      } /* LinkedIn blue */
+      .contact-icon.whatsapp {
+        background: #25d366;
+      } /* WhatsApp green */
+
+      .contact-image img {
+        max-width: 250px;
+        width: 100%;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background: #2c3e50;
+        color: #fff;
+      }
+
+      /* General responsive fix */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Hamburger button (hidden by default) */
+      .menu-toggle {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #2c3e50;
+      }
+
+      /* Fix hero and contact sections on mobile */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: flex; /* show hamburger */
+        }
+
+        /* Collapse nav links into dropdown */
+        #nav-links {
+          display: none;
+          flex-direction: column;
+          background: #ecf0f1;
+          position: absolute;
+          top: 60px;
+          right: 20px;
+          width: 150px;
+          border-radius: 8px;
+          padding: 40px;
+        }
+
+        #nav-links.show {
+          display: flex;
+        }
+
+        /* Keep logo centered */
+        .logo-icon {
+          flex: 1;
+          text-align: center;
+          max-width: 150px;
+          margin: 0 auto;
+        }
+
+        /* Stack sections */
+        #home,
+        #contact {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        #home img,
+        #contact img {
+          width: 100%;
+          max-width: 280px;
+          margin: 1rem auto;
+        }
+
+        #home h1,
+        #contact h2 {
+          font-size: 2rem;
+        }
+
+        nav {
+          flex-wrap: nowrap; /* keep nav items in one row */
+        }
+
+       
+        #about .about-content {
+        flex-direction: column;
+        text-align: center;
+        }
+
+        #about img {
+         margin-bottom: 1rem;
+        }
+      }
+
+      /* Project images responsive */
+      .project img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+      }
